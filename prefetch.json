@@ -1,0 +1,23 @@
+{
+  "name": "dfsp-docker",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies":{
+    "@leveloneproject/dfsp-identity":"*",
+    "@leveloneproject/dfsp-account":"*",
+    "@leveloneproject/dfsp-subscription":"*",
+    "@leveloneproject/dfsp-ledger":"*",
+    "@leveloneproject/dfsp-ussd":"*",
+    "@leveloneproject/dfsp-directory":"*",
+    "@leveloneproject/dfsp-api":"*",
+    "@leveloneproject/dfsp-rule":"*",
+    "@leveloneproject/dfsp-transfer":"*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

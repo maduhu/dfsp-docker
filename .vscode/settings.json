@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite default and user settings.
+{   "circleci.apiKey": "343f634d5f992f570c8db491cfe0cf3ed51ea83a",
+    "eslint.options": {
+        "configFile": "/home/kalin/work/ut5/ut/node_modules/ut-tools/eslint/l1p.eslintrc"
+    }
+}
