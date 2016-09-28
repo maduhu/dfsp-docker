@@ -2,7 +2,7 @@
 
 docker stop dfsp1
 docker rm dfsp1
-docker build -t dfsp .
+docker build -t dfsp:latest -t dfsp:`node -e 'console.log(require("./package.json").version)'` .
 docker run \
   -p 8009:8009 -p 8010:8010 -p 8011:8011 -p 8012:8012 -p 8013:8013 -p 8014:8014 -p 8015:8015 -p 8016:8016 -p 8017:8017 -p 8018:8018 -p 8019:8019 \
   -p 30009:30009 -p 30010:30010 -p 30011:30011 -p 30012:30012 -p 30013:30013 -p 30014:30014 -p 30015:30015 -p 30016:30016 -p 30017:30017 -p 30018:30018 -p 30019:30019 \

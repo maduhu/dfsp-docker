@@ -1,3 +1,2 @@
 #!/bin/bash
-
 docker run --name postgres -d -e POSTGRES_PASSWORD=dfsppass -e POSTGRES_USER=dfspadmin --restart=always postgres:9.5.4
