@@ -1,6 +1,6 @@
 {
   "name": "dfsp-docker",
-  "version": "1.0.7",
+  "version": "1.0.14",
   "description": "",
   "main": "index.js",
   "scripts": {
