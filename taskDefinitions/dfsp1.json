@@ -1,0 +1,556 @@
+{
+    "requiresAttributes": [{
+        "value": null,
+        "name": "com.amazonaws.ecs.capability.ecr-auth"
+    }, {
+        "value": null,
+        "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    }],
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:886403637725:task-definition/dfsp1:13",
+    "networkMode": "bridge",
+    "status": "ACTIVE",
+    "revision": 13,
+    "taskRoleArn": null,
+    "containerDefinitions": [{
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8019,
+            "containerPort": 8019,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30019,
+            "containerPort": 30019,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-ussd",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_ussd_dev_api__url",
+            "value": "http://dfsp1-api:8010"
+        }, {
+            "name": "ut_dfsp_ussd_dev_identity__url",
+            "value": "http://dfsp1-identity:8012"
+        }],
+        "links": [
+            "dfsp1-api",
+            "dfsp1-identity"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-ussd:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8010,
+            "containerPort": 8010,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30010,
+            "containerPort": 30010,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-api",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_api_dev_account__url",
+            "value": "http://dfsp1-account:8009"
+        }, {
+            "name": "ut_dfsp_api_dev_directory__url",
+            "value": "http://dfsp1-directory:8011"
+        }, {
+            "name": "ut_dfsp_api_dev_identity__url",
+            "value": "http://dfsp1-identity:8012"
+        }, {
+            "name": "ut_dfsp_api_dev_ledger__url",
+            "value": "http://dfsp1-ledger:8014"
+        }, {
+            "name": "ut_dfsp_api_dev_notification__url",
+            "value": "http://dfsp1-notification:8015"
+        }, {
+            "name": "ut_dfsp_api_dev_rule__url",
+            "value": "http://dfsp1-rule:8016"
+        }, {
+            "name": "ut_dfsp_api_dev_subscription__url",
+            "value": "http://dfsp1-subscription:8017"
+        }, {
+            "name": "ut_dfsp_api_dev_transfer__url",
+            "value": "http://dfsp1-transfer:8018"
+        }],
+        "links": [
+            "dfsp1-account",
+            "dfsp1-directory",
+            "dfsp1-identity",
+            "dfsp1-rule",
+            "dfsp1-ledger",
+            "dfsp1-subscription",
+            "dfsp1-transfer"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-api:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8009,
+            "containerPort": 8009,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30009,
+            "containerPort": 30009,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-account",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_account_dev_db__create__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_account_dev_db__create__user",
+            "value": "dfspadmin"
+        }, {
+            "name": "ut_dfsp_account_dev_db__db__database",
+            "value": "dfsp1-account"
+        }, {
+            "name": "ut_dfsp_account_dev_db__db__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_account_dev_db__db__user",
+            "value": "dfsp1.account"
+        }],
+        "links": [
+            "postgres"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-account:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8011,
+            "containerPort": 8011,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30011,
+            "containerPort": 30011,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-directory",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_directory_dev_db__create__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_directory_dev_db__create__user",
+            "value": "dfspadmin"
+        }, {
+            "name": "ut_dfsp_directory_dev_db__db__database",
+            "value": "dfsp1-directory"
+        }, {
+            "name": "ut_dfsp_directory_dev_db__db__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_directory_dev_db__db__user",
+            "value": "dfsp1.directory"
+        }],
+        "links": [
+            "postgres"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-directory:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8012,
+            "containerPort": 8012,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30012,
+            "containerPort": 30012,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-identity",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_identity_dev_db__create__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_identity_dev_db__create__user",
+            "value": "dfspadmin"
+        }, {
+            "name": "ut_dfsp_identity_dev_db__db__database",
+            "value": "dfsp1-identity"
+        }, {
+            "name": "ut_dfsp_identity_dev_db__db__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_identity_dev_db__db__user",
+            "value": "dfsp1.identity"
+        }],
+        "links": [
+            "postgres"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-identity:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8014,
+            "containerPort": 8014,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30014,
+            "containerPort": 30014,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-ledger",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_ledger_dev_db__create__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_ledger_dev_db__create__user",
+            "value": "dfspadmin"
+        }, {
+            "name": "ut_dfsp_ledger_dev_db__db__database",
+            "value": "dfsp1-ledger"
+        }, {
+            "name": "ut_dfsp_ledger_dev_db__db__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_ledger_dev_db__db__user",
+            "value": "dfsp1.ledger"
+        }],
+        "links": [
+            "postgres"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-ledger:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8016,
+            "containerPort": 8016,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30016,
+            "containerPort": 30016,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-rule",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_rule_dev_db__create__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_rule_dev_db__create__user",
+            "value": "dfspadmin"
+        }, {
+            "name": "ut_dfsp_rule_dev_db__db__database",
+            "value": "dfsp1-rule"
+        }, {
+            "name": "ut_dfsp_rule_dev_db__db__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_rule_dev_db__db__user",
+            "value": "dfsp1.rule"
+        }],
+        "links": [
+            "postgres"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-rule:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8017,
+            "containerPort": 8017,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30017,
+            "containerPort": 30017,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-subscription",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_subscription_dev_db__create__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_subscription_dev_db__create__user",
+            "value": "dfspadmin"
+        }, {
+            "name": "ut_dfsp_subscription_dev_db__db__database",
+            "value": "dfsp1-subscription"
+        }, {
+            "name": "ut_dfsp_subscription_dev_db__db__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_subscription_dev_db__db__user",
+            "value": "dfsp1.subscription"
+        }],
+        "links": [
+            "postgres"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-subscription:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [{
+            "hostPort": 8018,
+            "containerPort": 8018,
+            "protocol": "tcp"
+        }, {
+            "hostPort": 30018,
+            "containerPort": 30018,
+            "protocol": "tcp"
+        }],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": null,
+        "mountPoints": [],
+        "name": "dfsp1-transfer",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "ut_dfsp_transfer_dev_db__create__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_transfer_dev_db__create__user",
+            "value": "dfspadmin"
+        }, {
+            "name": "ut_dfsp_transfer_dev_db__db__database",
+            "value": "dfsp1-transfer"
+        }, {
+            "name": "ut_dfsp_transfer_dev_db__db__password",
+            "value": "dfsppass"
+        }, {
+            "name": "ut_dfsp_transfer_dev_db__db__user",
+            "value": "dfsp1.transfer"
+        }, {
+            "name": "ut_dfsp_transfer_dev_rule__url",
+            "value": "http://dfsp1-rule:8009"
+        }],
+        "links": [
+            "postgres",
+            "dfsp1-rule"
+        ],
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "886403637725.dkr.ecr.us-west-2.amazonaws.com/leveloneproject/dfsp-transfer:latest",
+        "command": [
+            "npm",
+            "start"
+        ],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 300
+    }, {
+        "volumesFrom": [],
+        "memory": null,
+        "extraHosts": null,
+        "dnsServers": null,
+        "disableNetworking": null,
+        "dnsSearchDomains": null,
+        "portMappings": [],
+        "hostname": null,
+        "essential": true,
+        "entryPoint": [],
+        "mountPoints": [],
+        "name": "postgres",
+        "ulimits": null,
+        "dockerSecurityOptions": null,
+        "environment": [{
+            "name": "POSTGRES_PASSWORD",
+            "value": "dfsppass"
+        }, {
+            "name": "POSTGRES_USER",
+            "value": "dfspadmin"
+        }],
+        "links": null,
+        "workingDirectory": null,
+        "readonlyRootFilesystem": null,
+        "image": "postgres:9.5.4",
+        "command": [],
+        "user": null,
+        "dockerLabels": null,
+        "logConfiguration": null,
+        "cpu": 0,
+        "privileged": null,
+        "memoryReservation": 500
+    }],
+    "volumes": [],
+    "family": "dfsp1"
+}
